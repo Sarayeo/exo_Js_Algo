@@ -30,7 +30,7 @@ class chevalier {
     }
 }
 let Jean = new chevalier("Jean", 10)
-let victime = new Victime(0.1)
+
 class Victime{
     constructor(pourcentage) {
         this.pourcentage = pourcentage;
@@ -47,24 +47,21 @@ class Victime{
     }
 
 }
-
+let victime = new Victime(0.1)
 
 while (Jean.pv > 0 ) {
+    console.log(Jean.pv)
     if(Jean.touche(victime)){
         victime.pv --
     }else{
         console.log("victime did not get touched")
-        console.log(victime.pv)
-        break
     }
     if (victime.pv<=0){
         console.log("victime is  dead")
-        break
     }
     victime.contreattack(Jean)
-    console.log(Pika.hp)
-    if (Pika.hp<=0){
+    console.log(victime.pv)
+    if (victime.pv<=0){
         console.log(" pika death")
-        break
     }
 }
