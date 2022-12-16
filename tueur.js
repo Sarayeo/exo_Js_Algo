@@ -10,7 +10,7 @@ le pourcentage augmente de 5% chaque fois que l'ennemi survit à un tour
 L'armure de Jean a 30% de chance de se casser lors d'un coup de l'ennemi
 on considère que le coup qui brise l'armure n'inflige pas de dégâts supplémentaires.
 
-    Si Jean possède une armure, son arme a 70% de toucher l'ennemi, sinon, 50% seulement.
+    Si Jean possède une armure, son épée a 70% de toucher l'ennemi, sinon, 50% seulement.
 Jean et l'ennemi infligent 1pv de dégât*/
 
 class chevalier {
@@ -20,7 +20,8 @@ class chevalier {
         this.pv = pv;
         this.win = 0;
     }
-    touché(){
+
+    touche(){
         if(this.hasarmure) {
             return Math.random () < 0.7 ;
         }else{
@@ -28,24 +29,29 @@ class chevalier {
         }
     }
 }
+let Jean = new chevalier("Jean", 10)
 
-
-
-class victimes {
+class Victime{
     constructor(pourcentage) {
         this.pourcentage = pourcentage;
-        this.pv = pv;
-        this.chancel2 = chancel2;
+        this.pv = 3;
+        this.nouveaufighter= true;
     }
+
 }
-const PL = new victimes("Pierre-louis","" ,"", "", "");*/
+let victime = new Victime(0.1)
 
-let Pe = 0.1
-while (chevalier.pv > 0 ) {
-    let pve = 3
-    if (chevalier.armure){
-        let deg = 1
-        Heracles deg
+while (Jean.pv > 0 ) {
+    Jean.touche(victime)
+    console.log(victime.pv)
+    if (victime.pv<=0){
+        console.log("victime is  dead")
+        break
     }
-
+    victime.touche(Jean)
+    console.log(Pika.hp)
+    if (Pika.hp<=0){
+        console.log(" pika death")
+        break
+    }
 }
