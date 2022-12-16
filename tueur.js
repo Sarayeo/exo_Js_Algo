@@ -14,25 +14,27 @@ on considère que le coup qui brise l'armure n'inflige pas de dégâts suppléme
 Jean et l'ennemi infligent 1pv de dégât*/
 
 class chevalier {
-    constructor(nom,arme,armure,pv) {
+    constructor(nom,pv) {
         this.nom = nom;
-        this.arme = arme;
-        this.defense = armure;
+        this.hasarmure = true;
         this.pv = pv;
+        this.win = 0;
     }
-    let Attackluck = true
-
-    attackHeracles(ennemie){
-            let dega = 1;
+    touché(){
+        if(this.hasarmure) {
+            return Math.random () < 0.7 ;
+        }else{
+            return Math.random () < 0.5 ;
         }
+    }
 }
-const Heracles = new chevalier("Jean", "","",10);
 
-/*class victimes {
-    constructor( nom , armure, arme, pv) {
-        this.nom = nom;
-        this.chancemourir = chancemourir;
-        this.chancedegat = chancedegat;
+
+
+class victimes {
+    constructor(pourcentage) {
+        this.pourcentage = pourcentage;
+        this.pv = pv;
         this.chancel2 = chancel2;
     }
 }
