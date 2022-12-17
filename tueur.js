@@ -62,6 +62,6 @@ while (Jean.pv > 0 ) {
     victime.contreattack(Jean)
     console.log(victime.pv)
     if (victime.pv<=0){
-        console.log(" pika death")
+        console.log(" jean death")
     }
 }
